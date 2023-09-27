@@ -44,13 +44,13 @@ contract Auction is ERC721URIStorage, ReentrancyGuard {
 
     uint public royaltyFee;
     address public companyAcc;
-    uint listingPrice = 0.02 ether;
+    uint listingPrice = 0.002 ether;
 
     mapping(uint => AuctionStruct) auctionedItem;
     mapping(uint => bool) auctionedItemExist;
     mapping(uint => BiddableStruct[]) biddersOf;
 
-    constructor(uint _royaltyFee) ERC721("Daltonic Tokens", "DAT") {
+    constructor(uint _royaltyFee) ERC721("Shiba Tokens", "SHI") {
         royaltyFee = _royaltyFee;
         companyAcc = msg.sender;
     }
