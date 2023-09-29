@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div
       className="min-h-screen bg-gradient-to-t from-gray-800 bg-repeat
-    via-[#25bd9c] to-gray-900 bg-center subpixel-antialiased"
+    via-[#252fbd] to-gray-400 bg-center subpixel-antialiased"
     >
       <Header />
       <Routes>

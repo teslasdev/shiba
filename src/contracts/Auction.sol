@@ -50,7 +50,7 @@ contract Auction is ERC721URIStorage, ReentrancyGuard {
     mapping(uint => bool) auctionedItemExist;
     mapping(uint => BiddableStruct[]) biddersOf;
 
-    constructor(uint _royaltyFee) ERC721("Shiba Tokens", "SHI") {
+    constructor(uint _royaltyFee) ERC721("Polygon Tokens", "PNft") {
         royaltyFee = _royaltyFee;
         companyAcc = msg.sender;
     }

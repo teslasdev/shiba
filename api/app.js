@@ -57,4 +57,12 @@ app.post('/process', async (req, res) => {
   }
 })
 
+app.get('/', async (req, res) => {
+  res.status(200).send({
+    message: 'Hello from Teslas!'
+  })
+  console.log(process.env.OPENAI_API_KEY)
+})
+
+
 app.listen(9000, () => console.log('Listing on port 9000...'))

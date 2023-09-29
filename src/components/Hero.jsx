@@ -24,14 +24,14 @@ const Banner = () => {
         <h1 className="font-semibold text-5xl py-1">Discover, Collect</h1>
         <h1 className="font-semibold text-4xl mb-5 py-1">
           and Sell
-          <span className="text-green-500 px-1">NFTs</span>.
+          <span className="text-blue-500 px-1">NFTs</span>.
         </h1>
         <p className="font-light">More than 100+ NFTs available to collect</p>
         <p className="font-light mb-11">& sell, get your NFTs now.</p>
 
         <div className="flex mb-4">
           <button
-            className="text-sm p-2 bg-green-500
+            className="text-sm p-2 bg-blue-500
             rounded-sm w-auto flex justify-center items-center
             shadow-md shadow-gray-700"
             onClick={() => setGlobalState('boxModal', 'scale-100')}
@@ -74,7 +74,7 @@ const Bidder = () => {
       >
         <div className="p-2">
           Current Bid
-          <div className="font-bold text-center">2.231 ETH</div>
+          <div className="font-bold text-center">2.231 MATIC</div>
         </div>
         <div className="p-2">
           Auction End
@@ -82,7 +82,7 @@ const Bidder = () => {
         </div>
       </div>
       <div
-        className="bg-green-500 w-full h-[40px] p-2
+        className="bg-blue-500 w-full h-[40px] p-2
       font-bold font-mono text-center"
       >
         Place a bid

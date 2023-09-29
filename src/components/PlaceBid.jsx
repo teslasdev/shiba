@@ -80,7 +80,7 @@ const PlaceBid = () => {
               step={0.01}
               className="block w-full text-sm text-slate-500 focus:outline-none
               cursor-pointer focus:ring-0 bg-transparent border-0 px-4 py-2"
-              placeholder="Price (ETH)"
+              placeholder="Price (MATIC)"
               name="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}

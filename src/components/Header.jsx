@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { connectWallet } from '../services/blockchain'
 import { truncate, useGlobalState } from '../store'
+import logo from '../assets/polygonnft.png'
 
 const Header = () => {
   const [connectedAccount] = useGlobalState('connectedAccount')
@@ -9,10 +10,7 @@ const Header = () => {
     <nav className="w-4/5 flex md:justify-center justify-between items-center py-4 mx-auto text-white">
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
         <Link to="/">
-          <span className="px-2 py-1 font-bold text-lg sm:text-3xl italic">
-            Dapp
-          </span>
-          <span className="py-1 font-semibold italic">Auction-NFT</span>
+          <img src={logo} alt="" className='w-[200px]' srcset="" />
         </Link>
       </div>
 
@@ -36,8 +34,8 @@ const Header = () => {
 
       {!connectedAccount ? (
         <button
-          className="shadow-xl shadow-black bg-green-500
-          hover:bg-green-700 md:text-sm sm:text-base p-2
+          className="shadow-xl shadow-black bg-blue-500
+          hover:bg-blue-700 md:text-sm sm:text-base p-2
           rounded-full"
           onClick={connectWallet}
         >
@@ -45,8 +43,8 @@ const Header = () => {
         </button>
       ) : (
         <button
-          className="shadow-xl shadow-black bg-green-500
-          hover:bg-green-700 md:text-sm sm:text-base p-2
+          className="shadow-xl shadow-black bg-blue-500
+          hover:bg-blue-700 md:text-sm sm:text-base p-2
           rounded-full"
         >
           {truncate(connectedAccount, 4, 4, 11)}

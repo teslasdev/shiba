@@ -59,7 +59,7 @@ const Details = ({ auction, account }) => {
     <div className="py-2">
       <h1 className="font-bold text-lg mb-1">{auction?.name}</h1>
       <p className="font-semibold text-sm">
-        <span className="text-green-500">
+        <span className="text-blue-500">
           @
           {auction?.owner == account
             ? 'You'
@@ -107,8 +107,8 @@ const Bidders = ({ bidders, auction }) => {
                   ? '@You'
                   : truncate(bid.bidder, 4, 4, 11)}
               </span>
-              <span className="text-green-400 font-medium text-sm">
-                {bid.price} ETH
+              <span className="text-blue-400 font-medium text-sm">
+                {bid.price} MATIC
               </span>
             </div>
 
@@ -117,7 +117,7 @@ const Bidders = ({ bidders, auction }) => {
             Date.now() > auction.duration ? (
               <button
                 className="shadow-sm shadow-black text-white
-                bg-green-500 hover:bg-green-700 md:text-xs p-1
+                bg-blue-500 hover:bg-blue-700 md:text-xs p-1
                 rounded-sm text-sm cursor-pointer font-light"
                 onClick={() => handlePrizeClaim(bid.bidderId)}
               >

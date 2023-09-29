@@ -2,6 +2,8 @@ import abi from '../abis/src/contracts/Auction.sol/Auction.json'
 import address from '../abis/contractAddress.json'
 import { ethers } from 'ethers'
 import { getGlobalState, setGlobalState } from '../store'
+import {providerOptions} from './web3Modal' 
+
 
 const { ethereum } = window
 const ContractAddress = address.address
@@ -46,14 +48,19 @@ const isWalletConnected = async () => {
 
 const connectWallet = async () => {
   try {
-    if (!ethereum) return alert('Please install Metamask')
-    const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
+    const provider = await web3Modal.connect();
+    const library = new ethers.providers.Web3Provider(provider);
+    const accounts = await library.listAccounts();
     setGlobalState('connectedAccount', accounts[0]?.toLowerCase())
   } catch (error) {
     reportError(error)
   }
 }
+import Web3Modal from "web3modal";
 
+const web3Modal = new Web3Modal({
+  providerOptions // required
+});
 const createNFTItem = async ({
   name,
   description,

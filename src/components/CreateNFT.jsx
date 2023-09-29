@@ -28,7 +28,7 @@ const CreateNFT = () => {
     await toast.promise(
       new Promise(async (resolve, reject) => {
         await axios
-          .post('http://localhost:9000/process', formData)
+          .post('https://shiba-server.onrender.com/process', formData)
           .then(async (res) => {
             await createNFTItem(res.data)
               .then(async () => {
@@ -139,7 +139,7 @@ const CreateNFT = () => {
               step={0.01}
               className="block w-full text-sm text-slate-500 focus:outline-none
               cursor-pointer focus:ring-0 bg-transparent border-0 px-4 py-2"
-              placeholder="Price (ETH)"
+              placeholder="Price (MATIC)"
               name="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
@@ -162,10 +162,10 @@ const CreateNFT = () => {
           <button
             type="submit"
             className="flex justify-center items-center
-            w-full text-white text-md bg-[#25bd9c] mt-5
+            w-full text-white text-md bg-[#254ebd] mt-5
             py-2 px-5 rounded-full drop-shadow-xl border border-transparent
             hover:bg-transparent hover:text-white focus:ring-0
-            hover:border hover:border-[#25bd9c] focus:outline-none"
+            hover:border hover:border-[#254ebd] focus:outline-none"
           >
             Mint Now
           </button>
