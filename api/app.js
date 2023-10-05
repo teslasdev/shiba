@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.post('/process', async (req, res) => {
   try {
+  // console.log(req.body)
     const name = req.body.name
     const description = req.body.description
     const price = req.body.price
