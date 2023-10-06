@@ -25,10 +25,15 @@ const CreateNFT = () => {
     formData.append('description', description)
     formData.append('image', fileUrl)
 
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: formData
+    };
     await toast.promise(
       new Promise(async (resolve, reject) => {
-        await axios
-          .post('https://shiba-z4lk.onrender.com/process', formData)
+        await fetch
+          ('https://shiba-z4lk.onrender.com/process', requestOptions)
           .then(async (res) => {
             // await createNFTItem(res.data)
             //   .then(async () => {
