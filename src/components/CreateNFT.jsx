@@ -32,8 +32,8 @@ const CreateNFT = () => {
     };
     await toast.promise(
       new Promise(async (resolve, reject) => {
-        await fetch
-          ('https://shiba-z4lk.onrender.com/process', requestOptions)
+        await axios
+          .post('https://shiba-z4lk.onrender.com/process', formData)
           .then(async (res) => {
             // await createNFTItem(res.data)
             //   .then(async () => {
