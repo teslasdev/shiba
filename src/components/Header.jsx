@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const Header = () => {
   const [connectedAccount] = useGlobalState('connectedAccount')
-  const [isOpen , setOpen] = useState(true)
+  const [isOpen , setOpen] = useState(false)
   return (
     <>
     <nav className="w-4/5 flex md:justify-center justify-between items-center py-4 mx-auto text-white">

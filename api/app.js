@@ -26,8 +26,7 @@ app.post('/process', async (req, res) => {
         .send('name, description, price, and image must not be empty')
     }
 
-    let params
-
+    let params;
     await toWebp(image.data).then(async (data) => {
       const imageURL = await uploadToIPFS(data)
 
@@ -53,7 +52,7 @@ app.post('/process', async (req, res) => {
       })
       .catch((error) => console.log(error))
   } catch (error) {
-    console.log(error)
+    console.log('error')
     return res.status(400).json({ error })
   }
 })
