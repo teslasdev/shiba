@@ -61,7 +61,6 @@ app.get('/', async (req, res) => {
   res.status(200).send({
     message: 'Hello from Teslas!'
   })
-  console.log(process.env.OPENAI_API_KEY)
 })
 
 

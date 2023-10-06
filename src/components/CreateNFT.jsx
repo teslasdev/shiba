@@ -28,14 +28,15 @@ const CreateNFT = () => {
     await toast.promise(
       new Promise(async (resolve, reject) => {
         await axios
-          .post('https://shiba-server.onrender.com/process', formData)
+          .post('https://shiba-z4lk.onrender.com/process', formData)
           .then(async (res) => {
-            await createNFTItem(res.data)
-              .then(async () => {
-                onClose()
-                resolve()
-              })
-              .catch((error) => reject(error))
+            // await createNFTItem(res.data)
+            //   .then(async () => {
+            //     onClose()
+            //     resolve()
+            //   })
+            //   .catch((error) => reject(error))
+            console.log(res)
           })
           .catch((error) => reject(error))
       }),
