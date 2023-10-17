@@ -7,7 +7,7 @@ const { toWebp, toMetadata, uploadToIPFS } = require('./metadata')
 const app = express()
 
 var corsOptions = {
-  origin: "https://shiba-kappa.vercel.app/"
+  origin: "http://localhost:3000"
 };
 
 app.use(cors(corsOptions));
