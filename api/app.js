@@ -1,5 +1,5 @@
 const cors = require('cors')
-const fs = require('fs').promises
+const fs = require('fs')
 const express = require('express')
 const fileupload = require('express-fileupload')
 const { toWebp, toMetadata, uploadToIPFS } = require('./metadata')
@@ -43,7 +43,7 @@ app.post('/process', async (req, res) => {
     const metadata = toMetadata(params)
     fs.readFile('./token.json')
           .then(async (data) => {
-            return res.status(200).json(data);
+            return res.status(200).json({data , metadata});
           })
           .catch((error) => console.log(error))
     // fs.writeFile('./token.json', JSON.stringify(metadata))
