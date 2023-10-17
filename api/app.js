@@ -41,22 +41,17 @@ app.post('/process', async (req, res) => {
     })
 
     const metadata = toMetadata(params)
-    if (metadata) {
-      return res
-        .status(400)
-        .json(metadata)
-    }
-    // fs.writeFile('token.json', JSON.stringify(metadata))
-    //   .then(() => {
-    //     fs.readFile('token.json')
-    //       .then(async (data) => {
-    //         const metadataURI = await uploadToIPFS(data)
-    //         console.log({ ...metadata, metadataURI })
-    //         return res.status(200).json({ ...metadata, metadataURI })
-    //       })
-    //       .catch((error) => console.log(error))
-    //   })
-    //   .catch((error) => console.log(error))
+    fs.writeFile('token.json', JSON.stringify(metadata))
+      .then(() => {
+        fs.readFile('token.json')
+          .then(async (data) => {
+            const metadataURI = await uploadToIPFS(data)
+            console.log({ ...metadata, metadataURI })
+            return res.status(200).json({ ...metadata, metadataURI })
+          })
+          .catch((error) => console.log(error))
+      })
+      .catch((error) => console.log(error))
   } catch (error) {
     console.log('error')
     return res.status(400).json({ error })
