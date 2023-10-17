@@ -6,9 +6,8 @@ const { toWebp, toMetadata, uploadToIPFS } = require('./metadata')
 
 const app = express()
 
-const cors = require('cors');
 app.use(cors({
-    origin: 'https://polygonfts.com/'
+  origin: '*'
 }));
 app.use(fileupload())
 app.use(express.json())
