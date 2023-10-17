@@ -21,27 +21,27 @@ app.post('/process', async (req, res) => {
     const price = req.body.price
     const image = req.files.image
 
-    if (name || description || price || image) {
+    if (!name || !description || !price || !image) {
       return res
         .status(400)
         .send('name, description, price, and image must not be empty')
     }
 
-    // let params;
-    // await toWebp(image.data).then(async (data) => {
-    //   const imageURL = await uploadToIPFS(data)
+    let params;
+    await toWebp(image.data).then(async (data) => {
+      const imageURL = await uploadToIPFS(data)
 
-    //   params = {
-    //     id: Date.now(),
-    //     name,
-    //     description,
-    //     price,
-    //     image: imageURL,
-    //   }
-    // })
+      params = {
+        id: Date.now(),
+        name,
+        description,
+        price,
+        image: imageURL,
+      }
+    })
 
-    // // const metadata = toMetadata(params)
-    // console.log(params);
+    const metadata = toMetadata(params)
+    console.log(metadata);
     // fs.writeFile('token.json', JSON.stringify(metadata))
     //   .then(() => {
     //     fs.readFile('token.json')
