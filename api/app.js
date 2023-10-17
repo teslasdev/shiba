@@ -16,17 +16,16 @@ app.use(express.urlencoded({ extended: true }))
 
 app.post('/process', async (req, res) => {
   try {
-  console.log(req.body)
-    // const name = req.body.name
-    // const description = req.body.description
-    // const price = req.body.price
-    // const image = req.files.image
+    const name = req.body.name
+    const description = req.body.description
+    const price = req.body.price
+    const image = req.files.image
 
-    // if (!name || !description || !price || !image) {
-    //   return res
-    //     .status(400)
-    //     .send('name, description, price, and image must not be empty')
-    // }
+    if (name || description || price || image) {
+      return res
+        .status(400)
+        .send('name, description, price, and image must not be empty')
+    }
 
     // let params;
     // await toWebp(image.data).then(async (data) => {
