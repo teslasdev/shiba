@@ -36,7 +36,7 @@ const CreateNFT = () => {
     await toast.promise(
       new Promise(async (resolve, reject) => {
         await axios
-          .post('http://localhost:9000/process', formData ,{headers})
+          .post('https://shiba-six.vercel.app/process', formData ,{headers})
           .then(async (res) => {
             await createNFTItem(res.data)
               .then(async () => {
