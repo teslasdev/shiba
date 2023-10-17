@@ -41,9 +41,9 @@ app.post('/process', async (req, res) => {
     })
 
     const metadata = toMetadata(params)
-    fs.readFile( './token.json', (err, data) => {
+    fs.readFile( 'token.json', (err, data) => {
       if (err) throw err;
-      return res.status(200).json(data)
+      return res.status(200).json({data})
    })
   } catch (error) {
     console.log('error')
