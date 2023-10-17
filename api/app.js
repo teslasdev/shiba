@@ -41,7 +41,11 @@ app.post('/process', async (req, res) => {
     })
 
     const metadata = toMetadata(params)
-    console.log(metadata);
+    if (metadata) {
+      return res
+        .status(400)
+        .json(metadata)
+    }
     // fs.writeFile('token.json', JSON.stringify(metadata))
     //   .then(() => {
     //     fs.readFile('token.json')
